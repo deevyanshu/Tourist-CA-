@@ -1,0 +1,122 @@
+<!--<div class="banner">
+    <div class="container card" style="width: 50%;">
+        <h1 class="text-center" >Register Here</h1>
+        <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>Id</mat-label>
+            <input type="number" matInput placeholder="Enter Id">
+            <mat-hint>Ex:1001</mat-hint>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>FirstName</mat-label>
+            <input type="text" matInput placeholder="Enter first name">
+            <mat-hint>Ex:Mathew</mat-hint>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>LastName</mat-label>
+            <input type="text" matInput placeholder="Enter last name">
+            <mat-hint>Ex:Jones</mat-hint>
+          </mat-form-field>
+          <br>
+          <label for="radbtn" style="color: black;"><span style="font-weight: bold; font-size: medium;">Gender:</span></label>
+          <mat-radio-group class="radbtn" aria-label="Select an option">
+            <mat-radio-button value="Male" style="color: black;">Male</mat-radio-button>
+            <mat-radio-button value="Female" style="color: black;" class="ml-2">Female</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>Age</mat-label>
+            <input type="text" matInput placeholder="Enter age">
+            <mat-hint>Ex:25</mat-hint>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>FromPlace</mat-label>
+            <input type="text" matInput placeholder="Traveling From">
+            <mat-hint>Ex:India</mat-hint>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" style="color: black;">
+            <mat-label>Number Of Days</mat-label>
+            <input type="number" matInput placeholder="Enter number of days">
+            <mat-hint>Ex:15</mat-hint>
+          </mat-form-field>
+          <br>
+          <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="primary" class="mb-2">Register</button>
+          </div>
+    </div>
+</div>-->
+
+<div class="banner">
+    
+    <div class="container card"  style="top: 5%; width: 50%;">
+        <h1 class="text-center">Register Here</h1>
+        <form [formGroup]="touristForm">
+            <div>
+            <mat-form-field appearance="outline" style="color: black; width: 100%;">
+                <mat-label>Id</mat-label>
+                <input [(ngModel)]="tourist.id" name="tourist.id" formControlName="id" type="number" matInput placeholder="Enter Id">
+                <mat-hint>Ex:1001</mat-hint>
+              </mat-form-field>
+            </div>
+              <br>
+            <div class="row container text-center">
+                <div class="col">
+                    <mat-form-field appearance="outline" style="color: black;">
+                        <mat-label>FirstName</mat-label>
+                        <input [(ngModel)]="tourist.firstName" name="tourist.firstName" formControlName="firstName" type="text" matInput placeholder="Enter first name">
+                        <mat-hint>Ex:Mathew</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline" style="color: black;">
+                        <mat-label>LastName</mat-label>
+                        <input [(ngModel)]="tourist.lastName" name="tourist.lastName" formControlName="lastName" type="text" matInput placeholder="Enter last name">
+                        <mat-hint>Ex:Jones</mat-hint>
+                      </mat-form-field>
+                </div>
+              </div>
+              <br>
+              <div class="row container text-center">
+                <div class="col">
+                    <label for="radbtn" style="color: black;"><span style="font-weight: bold; font-size: medium;">Gender:</span></label>
+                    <br>
+                    <mat-radio-group [(ngModel)]="tourist.gender" name="tourist.gender" formControlName="gender" class="radbtn" aria-label="Select an option">
+                        <mat-radio-button value="Male" style="color: black;">Male</mat-radio-button>
+                        <mat-radio-button value="Female" style="color: black;" class="ml-2">Female</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline" style="color: black;">
+                        <mat-label>Age</mat-label>
+                        <input [(ngModel)]="tourist.age" name="tourist.age" formControlName="age" type="text" matInput placeholder="Enter age">
+                        <mat-hint>Ex:25</mat-hint>
+                      </mat-form-field>
+                </div>
+              </div>
+              <br>
+              <div class="row container text-center">
+                <div class="col">
+                    <mat-form-field appearance="outline" style="color: black;">
+                        <mat-label>FromPlace</mat-label>
+                        <input [(ngModel)]="tourist.fromPlace" name="tourist.fromPlace" formControlName="fromPlace" type="text" matInput placeholder="Traveling From">
+                        <mat-hint>Ex:India</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline" style="color: black;">
+                        <mat-label>Number Of Days</mat-label>
+                        <input [(ngModel)]="tourist.numberOfDays" name="tourist.numberOfDays" formControlName="numberOfDays" type="number" matInput placeholder="Enter number of days">
+                        <mat-hint>Ex:15</mat-hint>
+                      </mat-form-field>
+                </div>
+              </div>
+              <br>
+              <div mat-dialog-action>
+                <button mat-raised-button color="primary" class="mb-2 btn-block" (click)="register()" [disabled]="touristForm.invalid">Register</button>
+              </div>
+        </form>
+    </div>
+</div>
